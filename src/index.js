@@ -21,7 +21,7 @@ function onInput(event) {
   fetchCountries(value)
     .then(data => {
       if (data.length > 10) {
-        clearhtml();
+        clearHtml();
         Notify.info(
           'Too many matches found. Please enter a more specific name.'
         );
@@ -62,7 +62,7 @@ function countryCard(data) {
     })
     .join('');
 }
-function clearhtml(ul, div) {
+function clearHtml(ul, div) {
   refs.countryList.innerHTML = ul || '';
   refs.countryInfo.innerHTML = div || '';
 }
