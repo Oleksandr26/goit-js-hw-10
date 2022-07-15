@@ -28,16 +28,16 @@ function onInput(event) {
       } else if (data.length > 1) {
         const markupPreview = preview(data);
         refs.countryList.insertAdjacentHTML('beforeend', markupPreview);
-        clearhtml(markupPreview);
+        clearHtml(markupPreview);
       } else {
         const markupCard = countryCard(data);
         refs.countryInfo.insertAdjacentHTML('beforeend', markupCard);
-        clearhtml('', markupCard);
+        clearHtml('', markupCard);
       }
     })
     .catch(error => {
       Notify.failure('Oops, there is no country with that name');
-      clearhtml();
+      clearHtml();
     });
 }
 
@@ -62,6 +62,7 @@ function countryCard(data) {
     })
     .join('');
 }
+
 function clearHtml(ul, div) {
   refs.countryList.innerHTML = ul || '';
   refs.countryInfo.innerHTML = div || '';
